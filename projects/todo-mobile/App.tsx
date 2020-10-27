@@ -17,8 +17,10 @@ export default function App() {
       { text, completed: false, id: randomId() },
       ...prevItems,
     ]);
+
   const removeItem = (id: string) =>
     setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+
   const markItemComplete = (id: string) =>
     setItems((prevItems) =>
       prevItems.map((item) =>
@@ -33,10 +35,13 @@ export default function App() {
       <NewItem onSubmit={addItem} />
       <FlatList
         style={styles.list}
-        contentContainerStyle={styles.list}
         data={items}
         renderItem={({ item }) => (
-          <ListItem item={item} onPress={() => markItemComplete(item.id)} onRemove={() => removeItem(item.id)} />
+          <ListItem
+            item={item}
+            onPress={() => markItemComplete(item.id)}
+            onRemove={() => removeItem(item.id)}
+          />
         )}
       />
     </View>
@@ -52,7 +57,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: "5%",
   },
   title: {
-    marginTop: 100,
+    marginTop: 80,
     marginBottom: 50,
     fontSize: 25,
     fontWeight: "700",
@@ -61,7 +66,8 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   list: {
-    paddingTop: 20,
-    width: '100%',
+    marginVertical: 20,
+    width: "100%",
+    paddingBottom: 20,
   },
 });

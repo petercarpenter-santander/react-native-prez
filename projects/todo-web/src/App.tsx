@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ListItem, { Item } from "./components/ListItem";
 import NewItem from "./components/NewItem";
 import { StyleSheet } from "./utils";
-import { titleText } from "common/text";
 
 export default function App() {
   const [items, setItems] = useState<Item[]>([
@@ -17,8 +16,10 @@ export default function App() {
       { text, completed: false, id: randomId() },
       ...prevItems,
     ]);
+
   const removeItem = (id: string) =>
     setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+
   const markItemComplete = (id: string) =>
     setItems((prevItems) =>
       prevItems.map((item) =>
@@ -28,7 +29,7 @@ export default function App() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>{titleText}</h1>
+      <h1 style={styles.title}>ToDo App</h1>
       <NewItem onSubmit={addItem} />
       <div style={styles.list}>
         {items.map((item) => (

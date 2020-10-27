@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "flex-start",
     paddingHorizontal: "5%",
-    paddingVertical: 5,
+    paddingVertical: 10,
     alignItems: "center",
   },
   text: {
-    fontSize: 16,
+    fontSize: 18,
     color: "#000",
   },
   checkedText: {
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginRight: 20,
-    width: 20,
-    height: 20,
+    width: 25,
+    height: 25,
     borderStyle: "solid",
     borderWidth: 2,
     borderColor: "#000",
@@ -75,6 +75,6 @@ const styles = StyleSheet.create({
   },
   removeText: {
     color: "#000",
-    fontSize: 18,
+    fontSize: 20,
   },
 });
