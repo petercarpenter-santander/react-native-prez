@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>React Native</title>
+  <meta charset="utf-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800|Overpass+Mono&display=swap');
+
+    body {
+      font-family: 'Open Sans';
+    }
+
+    .remark-code,
+    .remark-inline-code {
+      font-family: 'Overpass Mono';
+    }
+
+    .big-red {
+      font-size: 50px;
+      font-weight: 600;
+      color: #EC0000;
+      text-align: center;
+      width: 100%;
+    }
+
+    blockquote {
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="source">
+
+class: center, middle
+
+# React Native: what, how and why?
+
+Peter Carpenter
+
+---
+
+### Aim - to answer the following questions:
+
+- What is React Native?
+- What are its capabilities and limitations?
+- How does it work?
+- How can it help me build apps more efficiently?
+- Why would I consider using it for personal projects?
+- Why would Santander consider using it for enterprise grade projects?
+
+---
+
+# Contents
+
+1. Introduction to React & React Native
+2. Taking a look at a basic React Native application
+3. React Native at scale
+4. Other advantages & disadvantages
+5. Q&A
+
+---
+
+class: center, middle
+
+# Introduction to React & React Native
+
+---
+
+### Let's start with React
+
+React is an open source javascript library created and maintained by Facebook for building user interfaces on the web.
+
+---
+
+### Let's start with React
+
+React is an open source javascript library created and maintained by Facebook for building user interfaces on the web.
+
+- Not a complete framework - only concerned with rendering
+
+---
+
+### Let's start with React
+
+React is an open source javascript library created and maintained by Facebook for building user interfaces on the web.
+
+- Not a complete framework - only concerned with rendering
+- Component based
+
+---
+
+### Let's start with React
+
+React is an open source javascript library created and maintained by Facebook for building user interfaces on the web.
+
+- Not a complete framework - only concerned with rendering
+- Component based
+- Unidirectional data flow - "UI is a function of state"
+
+---
+
+### Let's start with React
+
+React is an open source javascript library created and maintained by Facebook for building user interfaces on the web.
+
+- Not a complete framework - only concerned with rendering
+- Component based
+- Unidirectional data flow - "UI is a function of state"
+- Encourages declarative and functional programming styles
+
+---
+
+### Example React Component
+
+```jsx
+function MyHeader({ companyName }: { companyName: string }) {
+  const loadData = () => {
+    // ...
+  };
+
+  return (
+    <header className="header">
+      <img src="assets/logo.png" />
+      <h1>{companyName}</h1>
+      <div className="nav">
+        <a href="/home">Home</a>
+        <a href="/account" onClick={loadData}>Account</a>
+      </div>
+    </header>
+  );
+}
+```
+
+---
+
+### How about React Native?
+
+React native is a set of tools and libraries used to create cross platform mobile applications.
+
+---
+
+### How about React Native?
+
+React native is a set of tools and libraries used to create cross platform mobile applications.
+
+- A javascript codebase, building UI with React
+
+---
+
+### How about React Native?
+
+React native is a set of tools and libraries used to create cross platform mobile applications.
+
+- A javascript codebase, building UI with React
+- Instead of HTML elements, new primitives which wrap platform specific native code
+
+---
+
+### How about React Native?
+
+React native is a set of tools and libraries used to create cross platform mobile applications.
+
+- A javascript codebase, building UI with React
+- Instead of HTML elements, new primitives which wrap platform specific native code
+- Apps use the same platform APIs as native iOS and Android
+
+---
+
+### How about React Native?
+
+React native is a set of tools and libraries used to create cross platform mobile applications.
+
+- A javascript codebase, building UI with React
+- Instead of HTML elements, new primitives which wrap platform specific native code
+- Apps use the same platform APIs as native iOS and Android
+- Javascript and native code communicate asynchronously over the "bridge"
+
+---
+
+### Example React Native Component
+
+```jsx
+function MyHeader({ companyName }: { companyName: string }) {
+  const goToHome = ...
+  const goToAccounts = ...
+  return (
+    <View style={styles.header}>
+      <Image source={require('assets/logo.png')} />
+      <Text>{companyName}</Text>
+      <View style={styles.nav}>
+        <TouchableHighlight onPress={goToHome}>
+          <Text>Home</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={goToAccounts}>
+          <Text>Accounts</Text>
+        </TouchableHighlight>
+      </View>
+    </View>
+  );
+}
+```
+
+---
+
+### How do we build apps with React Native?
+
+---
+
+### How do we build apps with React Native?
+
+We have two main choices:
+
+---
+
+### How do we build apps with React Native?
+
+We have two main choices:
+
+#### Native platform tools
+
+Use the React Native CLI, along with Xcode and Android Studio to build and run your app
+
+---
+
+### How do we build apps with React Native?
+
+We have two main choices:
+
+#### Native platform tools
+
+Use the React Native CLI, along with Xcode and Android Studio to build and run your app.
+
+#### Expo
+
+A set of tools and services that simplify the process, with some additional features.
+
+
+
+
+</textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+  var slideshow = remark.create({
+    highlightStyle: 'dark',
+  });
+</script>
+</body>
+
+</html>
