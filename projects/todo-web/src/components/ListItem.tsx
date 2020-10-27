@@ -30,14 +30,16 @@ export default function ListItem({
       <p style={{ ...styles.text, ...(item.completed && styles.checkedText) }}>
         {item.text}
       </p>
-      <span style={styles.remove} onClick={onRemove}>ⓧ</span>
+      <span style={styles.remove} onClick={onRemove}>
+        ⓧ
+      </span>
     </div>
   );
 }
 
 const styles: StyleSheet = {
   container: {
-    boxSizing: 'border-box',
+    boxSizing: "border-box",
     display: "flex",
     flexDirection: "row",
     width: "100%",
@@ -56,7 +58,7 @@ const styles: StyleSheet = {
     textDecorationLine: "line-through",
   },
   checkbox: {
-    display: 'flex',
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     marginRight: 20,
@@ -66,7 +68,7 @@ const styles: StyleSheet = {
     borderWidth: 2,
     borderColor: "#000",
     borderRadius: 3,
-    cursor: 'pointer',
+    cursor: "pointer",
   },
   checked: {
     backgroundColor: "#00C80F",
@@ -78,6 +80,6 @@ const styles: StyleSheet = {
     color: "#000",
     fontSize: 18,
     marginLeft: "auto",
-    cursor: 'pointer',
+    cursor: "pointer",
   },
 };
