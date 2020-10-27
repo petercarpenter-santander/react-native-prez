@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ListItem, { Item } from "./components/ListItem";
 import NewItem from "./components/NewItem";
 import { StyleSheet } from "./utils";
-import { titleText } from "../../common/text";
+import { titleText } from "common/text";
 
 export default function App() {
   const [items, setItems] = useState<Item[]>([
