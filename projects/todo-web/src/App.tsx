@@ -1,32 +1,11 @@
-import React, { useState } from "react";
-import ListItem, { Item } from "./components/ListItem";
+import React from "react";
+import { useTodo } from "common/hooks";
+import ListItem from "./components/ListItem";
 import NewItem from "./components/NewItem";
 import { StyleSheet } from "./utils";
 
 export default function App() {
-  const [items, setItems] = useState<Item[]>([
-    { completed: false, text: "Item 1", id: "1" },
-    { completed: true, text: "Item 2", id: "2" },
-  ]);
-
-  const randomId = () => Date.now().toString();
-
-  const addItem = (text: string) =>
-    setItems((prevItems) => [
-      { text, completed: false, id: randomId() },
-      ...prevItems,
-    ]);
-
-  const removeItem = (id: string) =>
-    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
-
-  const markItemComplete = (id: string) =>
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, completed: !item.completed } : item
-      )
-    );
-
+  const { items, addItem, removeItem, markItemComplete } = useTodo();
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>ToDo App</h1>

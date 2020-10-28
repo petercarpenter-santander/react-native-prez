@@ -1,11 +1,6 @@
 import React from "react";
+import { Item } from "common/hooks";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-
-export interface Item {
-  text: string;
-  completed: boolean;
-  id: string;
-}
 
 export default function ListItem({
   item,

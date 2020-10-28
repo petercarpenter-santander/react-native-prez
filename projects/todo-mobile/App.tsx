@@ -1,32 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React from "react";
+import { useTodo } from "common/hooks";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import NewItem from "./components/NewItem";
-import ListItem, { Item } from "./components/ListItem";
+import ListItem from "./components/ListItem";
 
 export default function App() {
-  const [items, setItems] = useState<Item[]>([
-    { completed: false, text: "Item 1", id: "1" },
-    { completed: true, text: "Item 2", id: "2" },
-  ]);
-
-  const randomId = () => Date.now().toString();
-
-  const addItem = (text: string) =>
-    setItems((prevItems) => [
-      { text, completed: false, id: randomId() },
-      ...prevItems,
-    ]);
-
-  const removeItem = (id: string) =>
-    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
-
-  const markItemComplete = (id: string) =>
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, completed: !item.completed } : item
-      )
-    );
+  const { items, addItem, removeItem, markItemComplete } = useTodo();
 
   return (
     <View style={styles.container}>

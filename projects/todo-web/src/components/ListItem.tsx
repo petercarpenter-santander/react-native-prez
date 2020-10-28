@@ -1,11 +1,6 @@
 import React from "react";
+import { Item } from 'common/hooks';
 import { StyleSheet } from "../utils";
-
-export interface Item {
-  text: string;
-  completed: boolean;
-  id: string;
-}
 
 export default function ListItem({
   item,
